@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ボタンのCSS 【クリック前】 */
+.ハンバーガー {
+	display: block;
+	position: fixed;
+	width: 1.75rem;
+	height: 1.5rem;
+	top: 10px;
+	right: 10px;
+}
+
+.ハンバーガー i {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: ghostwhite;
+  position: absolute;
+  transition: transform .5s, opacity .5s;
+}
+
+.ハンバーガー i:nth-child(1) {
+  top: 0;
+}
+.ハンバーガー i:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.ハンバーガー i:nth-child(3) {
+  bottom: 0;
+}
+
+/* ボタンのCSS 【クリック後「.表示」クラスが追加されている】 */
+.ハンバーガー.表示 i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.ハンバーガー.表示 i:nth-child(2) {
+    opacity: 0;
+}
+.ハンバーガー.表示 i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+/* メニューリストのCSS【クリック前】 */
+.メニュー {
+  position: fixed;
+  top: 3rem;
+  left: 10;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+	color: ghostwhite;
+	background-color: lightpink;
+}
+
+/* メニューリストのCSS【クリック後「.表示」クラスが追加されている】 */
+.メニュー.表示 {
+  opacity: 1;
+  visibility: visible;
+}
